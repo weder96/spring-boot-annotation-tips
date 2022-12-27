@@ -1,0 +1,10 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /vagrant/springbootapp/target/*.log
+      type: log
+
+output:
+  elasticsearch:
+    hosts: ["http://elkserver:9200"]

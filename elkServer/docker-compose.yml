@@ -1,0 +1,48 @@
+version: '3.3'
+
+services:
+  splunkenterprise:
+    hostname: splunkenterprise
+    image: splunk/splunk:7.0.3
+    environment:
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_ENABLE_LISTEN: 9997
+      SPLUNK_ADD: tcp 1514
+    volumes:
+      - opt-splunk-etc:/opt/splunk/etc
+      - opt-splunk-var:/opt/splunk/var
+    ports:
+      - "8000:8000"
+      - "9997:9997"
+      - "8088:8088"
+      - "1514:1514"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+    container_name: elasticsearch
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.4.3
+    container_name: kibana
+    environment:
+      ELASTICSEARCH_URL: "http://elasticsearch:9200"
+    ports:
+      - 5601:5601
+    depends_on:
+      - elasticsearch
+
+volumes:
+  opt-splunk-etc:
+  opt-splunk-var:
+  esdata1:
+    driver: local
