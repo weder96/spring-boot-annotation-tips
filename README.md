@@ -1,5 +1,4 @@
-# Spring Boot: Tudo que você precisa saber, e o que ninguem te conta.
-
+# Spring Boot: Tudo que você precisa saber, e o que ninguem te contou.
 
 Para todos os que buscam se solidificar em uma carreira de desenvolvimento de aplicações usando Java, devem alem de buscar todos os conhecimentos em OOP,
 como citei no meu artigo [15 Tips to Become a Java Expert!](https://dev.to/weder96/15-tips-to-become-a-java-expert-1acj), na parte de aprender um framework/lib,
@@ -20,10 +19,10 @@ Nesse artigo vamos abordar a seguinte ordem para dominar o **Spring Boot**:
 3. Como startar o Spring Boot?
 
 
-1. O que é Spring Boot?
+-----------------------------------------------------------------------------------------------------------
+**1. O que é Spring Boot?**
 
 O Spring Boot é um framework que nasceu a partir do Spring(MVC), um framework desenvolvido para a plataforma Java baseado nos padrões de projetos, IOC(inversão de controle) e ID(injeção de dependência), sendo que os dois são padrões de projeto que ajuda muito a deixar o código desacoplado.
-
 
 Spring framework foi criado para simplificar as configurações para aplicações web, porem você ainda configurava muito arquivos xml,o que não conseguiu a atender seu objetivo, mas que já te auxiliava em grandes situações, além do projeto sair com suas camadas bem definidas.
 
@@ -38,7 +37,10 @@ Ele nos fornece a maioria dos componentes necessários em aplicações em geral 
 
 Resumindo o  Spring Boot como um template pré-configurado para desenvolvimento e execução de aplicações baseadas no Spring.
 
-2. Os Componentes do Spring Boot
+
+-----------------------------------------------------------------------------------------------------------
+
+**2. Os Componentes do Spring Boot**
 
 O [spring-boot](https://spring.io/projects/spring-boot), na data de escrita deste artigo o mesmo se encontra na versão 3.0.1, com cerca de 21 libs que te auxiliar na construção de suas aplicações :
 
@@ -72,6 +74,8 @@ Vamos dividir essa primeira parte em 3 fragmentos:
 - Spring Boot AutoConfigurator
 - Spring Boot Actuator
 
+
+-----------------------------------------------------------------------------------------------------------
 ### **Spring Boot Starter**
 
 Quando criamos uma aplicação queremos fornecer meio de acesso a está aplicação então desenvolvemos os serviços REST; que neste momemto estamos utilizando por tras libs como Spring MVC, Tomcat e Jackson – entre outras muitas dependências para um único aplicativo.
@@ -107,6 +111,9 @@ Como visto ao executar o comando a função do Springboot é combinar as várias
 
 Notamos, que se tivessemos que adicionar uma a uma esse processo seria bem trabalhoso. Sendo assim, Spring Boot utiliza os inicializadores (starters) a fim de diminuí-lo significativamente. 
 
+
+-----------------------------------------------------------------------------------------------------------
+
 ### **Spring Boot AutoConfigurator**
 
 A configuração automática do Spring Boot tenta configurar automaticamente seu aplicativo Spring com base nas dependências jar que você adicionou. 
@@ -125,6 +132,8 @@ Em uma aplicação Spring Boot, o AutoConfigurator pode ser visto através da ut
 Internamente, a annotation @SpringBootApplication  é uma combinação das tradicionais annotations @Configuration, @ComponentScan e @EnableAutoConfiguration do Spring.
 
 
+-----------------------------------------------------------------------------------------------------------
+
 ### **Spring Boot Actuator**
 
 O Spring Boot Actuator, ele nos fornece endpoints que facilita a obtenção de métricas da nossa aplicação.
@@ -141,7 +150,9 @@ O Spring Boot AutoConfigurator define que o servidor web deve ser exposto em loc
 No meu github tem um projeto [SpringBootActuatorPrometheus](https://github.com/weder96/SpringBootActuatorPrometheus) que ensina a ativar o mesmo e interligar ao Prometheus e ao Kibana, e visualizar seus graficos com as meticas do micrometer e spring boot Statistic. 
 
 
-3. Como startar o Spring Boot?
+-----------------------------------------------------------------------------------------------------------
+
+## **3. Como startar o Spring Boot?**
 
 Então como criar meu primeiro projeto com spring boot, para começar a entender, e sim o springboot nos auxilair , pois ele criou um site onde podemos criar nossa criar uma aplicação base, chamado de Spring Initializr, basta acessar https://start.spring.io/ e inserir as informações necessárias sobre projeto.  
 
@@ -157,7 +168,8 @@ O legal aqui no [https://start.spring.io/](https://start.spring.io/) e que somen
 
 No proximo passo você consegue importar esse projeto para desenvolvê-lo em sua IDE  de preferencia exemplo [Eclipse](https://www.eclipse.org/downloads/), [Netbeans](https://netbeans.apache.org/) ou [IntelliJ](https://www.jetbrains.com/idea/download/#section=linux).
 
-**E você qual IDE você prefere ?**
+
+**_E você qual IDE você prefere ?_**
 
 Já usei todas as 3 acima citada, mas no dia-a-dia o Intellij, tem ganhado um espaço dentro das organizações, então atualmente somente uso a mesma e sempre gosto de validar como está o Eclipse que em muitas empresas usa no desenvolvimento.
 
@@ -165,8 +177,8 @@ Já usei todas as 3 acima citada, mas no dia-a-dia o Intellij, tem ganhado um es
 Depois desta parte Teorica que também não sou fã de muita conversinha, gosto de colocar a mão na massa.
 
 
-
-### Qual é a melhor maneira de aprender Spring Boot um novo framework?
+-----------------------------------------------------------------------------------------------------------
+### **Qual é a melhor maneira de aprender Spring Boot um novo framework?**
 
 Essa questão no incio da minha busca pelo conhecimento sobre o assunto era com certeza livros.
 
@@ -221,18 +233,20 @@ Já no youtube tem curso bons e gratuitos como [Spring Boot Tutorial | Full Cour
 
 Outro que chama atenção [Spring Boot Quick Start - Java Brains](https://www.youtube.com/watch?v=msXL2oDexqw&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x), esse segundo e bem didatico, mas não foca bem em camadas(package), mas te da uma ideia de ligações bem estruturadas em camadas.
 
-E na Udemy, 
+E na [UDemy](https://www.udemy.com/courses/search/?src=ukw&q=Spring+boot), aqui deixo um [Post - My Favorite Courses to Learn Spring Boot in 2022 — Best of Lot](https://medium.com/javarevisited/top-10-courses-to-learn-spring-boot-in-2020-best-of-lot-6ffce88a1b6e) muito bem detalhado sobre cursos s
+obre Spring boot [Udemy](https://www.udemy.com/courses/search/?src=ukw&q=Spring+boot).
 
 
-**Mas vc recomenda algum curso em portugues sobre Spring boot?**
+### **Mas vc recomenda algum curso em portugues sobre Spring boot?**
 
 Um gratuito e pode ser encontrado no Youtube, são os cursos do DevDojo, os caras e sem base são feras, quando o assunto e distribuir um curso gartuito e de qualidade [Spring Boot 2 Essentials](https://www.youtube.com/watch?v=bCzsSXE4Jzg&list=PL62G310vn6nFBIxp6ZwGnm8xMcGE3VA5H)
 
 Agora se você quer o Curso e não está preocupado em gastar uma grana, tem o melhor e mais completo curso de [Especialista Rest da Algaworks](https://cafe.algaworks.com/esr-matriculas-abertas-ago/) e fortissimo o curso, são 25 modulos que te ensinam todos os conteudo que você precisar pra ser um especialista, não estou fazendo aqui propaganda, quem já fez o curso sabe que o custo beneficio compensa pois o curso e muito bom.
 
 
+--------------------------------------------------------------------------------------------------------------------------
 
-## **Ok, temos livros e cursos, mas o que realmente o mercado quer de mim como Desenvolvedor em alto nivel?**
+### **Ok, temos livros e cursos, mas o que realmente o mercado quer de mim como Desenvolvedor em alto nivel?**
 
 Quando eu fiz essa pergunta, muita coisa mudou na minha vida, e Graças a Deus, muita coisa mudou pra melhor.
 
@@ -240,69 +254,87 @@ Comecei a buscar vagas e ver o que era padrão entre elas, tanto backEnd como Fr
 
 O que chamou atenção e que todas as vagas em que os salarios eram melhores e tinhas muitas pessoas que falavam bem das  contratantes no [**Glassdoor**](https://www.glassdoor.com.br/member/home/index.htm), sempre queria desenvolvedor Java, que conhecia mensageria, que sabia sobre microservicos e seus design Patterns ou novas arquiteturas voltadas para microservicos (Spring Cloud).
 
-**Outra questão será que o tanto que sabia era suficiente, será que tinha colocado a mão na massa suficiente?** 
+### **Outra questão será que o tanto que sabia era suficiente, será que tinha colocado a mão na massa suficiente?** 
 
 Nunca iremos conseguir responder essa questão pois sempre depende do tipo e tamanho do projeto, mas naquele momento todas as questões sobre o assunto eu conseguia responder com agilidade e citando exemplos, pois já tinha feito varias POC(Prova Conceito), é já tinha repassado o site [https://microservices.io/](https://microservices.io/) escrito por [Chris Richardson](https://www.oreilly.com/pub/au/2296).
 
 Como gosto de um bom livro mas o de [Chris Richardson](https://www.oreilly.com/pub/au/2296) com titulo [Microservices Patterns WITH EXAMPLES IN JAVA CHRIS R ICHARDSON](https://www.amazon.com.br/Microservice-Patterns-examples-Chris-Richardson/dp/1617294543) é um daqueles que causa dor e "sem dor sem ganho". no [Join Community 2022](https://github.com/weder96/demoJoinCommunity), destaquei alguns deste ponto com o problemas que temos ao sair do monolito e migrar a um micro serviço, e descobrimos que se arquitetura de software não estiver lado a lado com o desenvolvedor, os problemas podem ser catrastrofico, e se você como desenvolvedor não entende o também são dois que estarão em um barco velejando sem rumo , e qualquer lugar tá valendo, e que vemos e que essa galera sempre abandona o barco(Troca de emprego).
 
-**Certo mas o que importa para o mercado de trabalho, vc tem que entender bem sobre:**
+### **Certo mas o que importa para o mercado de trabalho, vc tem que entender bem sobre:**
 
-Orientação a objetos(Pilares da OOP).
-Conhecer as funçoes sobre cada design patterns (criacional), e como usar os principais exemplo(Builder, Adapter, Facade, Factory). 
-Collections e as diferenças entre lista, pilha, fila e mapas, lembre-se aqui não somente teoria vc deve dominar o assunto, saber todas as formas de percorrer, cada um dos tipos, e como percorrer mapas(ForEach, Entry, key, value)
-Sua capacidade de criação de base de dados(DDL) e (SQL) , na maioria das vezes somente entender a questão sobre relação entre entidades.
+- **Orientação a objetos** (Pilares da OOP).
+- Conhecer as funçoes sobre cada **Design Patterns (criacional, Estrutural, Comportamental )**, e como usar os principais exemplo(**Builder, Factory, Singleton,  Adapter, Facade, Proxy, Observer, Chain of Responsibility, Strategy**). 
+- **Collections** e as diferenças entre **lista, pilha, fila e mapas**, lembre-se aqui não somente teoria vc deve dominar o assunto, saber todas as formas de percorrer, cada um dos tipos, e como percorrer mapas **(ForEach, Entry, key, value)**
+- Sua capacidade de criação de base de dados(**DDL**) e (**SQL**) , na maioria das vezes somente entender a questão sobre relação entre entidades.
 
-Show, mas até aqui e somente trabalhar com Java e Banco de Dados, abaixo são caracteristicas para dominar o Spring boot.
+Show, mas até aqui e somente trabalhar com Java e Banco de Dados, que são primordiais, mas no mercado de trabalho e necessario um pouco mais, e esse pouco estão direcionada as caracteristicas de quem **"DOMINA"** o Spring boot.
 
-Pra dominar o conhecimento sobre Spring boot a primeira e principal e saber o que IOC(Inversão de Controle),e o queé um Bean:
+Pra dominar o conhecimento sobre Spring boot a primeira e principal e saber o que IOC(Inversão de Controle), (ID - Dependency Injection) e o que é um [@Bean](https://medium.com/@decioluckow/explorando-bean-spring-ioc-e640c53d29a9):
+
+Quando digo dominar [IoC Container(Inversion of Control)](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring), e [ID - Dependency Injection](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring) E ter a ciencia de por que se usa estes EM UM PROJETO,  e não somente usar o Spring usando alguns tutoriais ou já pegar um projeto pronto. Mas como sei se compreendi, pra saber responda pra vc a pergunta abaixo.
+
+_**Senão tivesse o Spring como usaria este conceito(IoC e ID)?**_
+
+Pois quando vc domina o Ciclo de vida e entende que um Bean é um Singleton e como [listar os Beans da minha aplicação](https://www.baeldung.com/spring-show-all-beans), ai vc compreende como usar as anotações do Spring.
+
+Já que citamos **anotações** vc deve entender todas as principais **annotations** do Spring, abaixo uma listagens.
+
+@Autowired <br/>
+@Bean <br/>
+@Component <br/>
+@ComponentScan <br/>
+@Configuration <br/>
+@ConfigurationProperties <br/>
+@CookieValue <br/>
+@CrossOrigin <br/>
+@DeleteMapping <br/>
+@EnableAutoConfiguration <br/>
+@GetMapping <br/>
+@Lazy <br/>
+@PathVariable <br/>
+@Primary <br/>
+@PostMapping <br/>
+@Profile <br/>
+@PropertySource <br/>
+@PropertySources <br/>
+@PutMapping <br/>
+@Qualifier <br/>
+@Required <br/>
+@RestController/@Controller <br/>
+@Repository <br/>
+@RequestBody <br/>
+@RequestMapping <br/>
+@RequestParam <br/>
+@Scope <br/>
+@Service <br/>
+@SpringBootApplication <br/>
+@Value <br/>
 
 
-Depois vc deve entender todas as principais annotations do Spring.
+**_Como estudar esse tanto de Anotação do Spring?_**
 
-@Autowired
-@Bean
-@Component
-@ComponentScan
-@Configuration
-@ConfigurationProperties
-@CookieValue
-@CrossOrigin
-@DeleteMapping
-@EnableAutoConfiguration
-@GetMapping
-@Lazy
-@PathVariable
-@Primary
-@PostMapping
-@Profile
-@PropertySource
-@PropertySources
-@PutMapping
-@Qualifier
-@Required
-@RestController/@Controller
-@Repository
-@RequestBody
-@RequestMapping
-@RequestParam
-@Scope
-@Service
-@SpringBootApplication
-@Value
+Sempre devemos buscar a primeira, que é a [Documentação Oficial](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#getting-started), 
+Mas tem uma galera que ja gosta e de ver o quanto tem perguntas e resposta sobre o [Framework SpringBoot](https://stackoverflow.com/search?q=spring+boot)
+no Stackoverflow(na data deste artigo estava com 156,175 results), mas por que buscar no Stackoverflow?
 
-Existe um canal no Youtube da [Michelli Brito](https://www.youtube.com/watch?v=Pd5tr483No0), que pode te auxiliar a entender todas essas anotações do Spring boot, a mais esse e em Português.
+A questão aqui e que muitos buscam como a comunidade está afinada com o Framework, ou se a mesma e ativa na ajuda de problemas que podem a vir a acontecer.
+
+O proprio Spring possui um [github](https://github.com/spring-projects/spring-boot), com projetos [modelos](https://github.com/spring-projects/spring-boot/tree/main/spring-boot-project), que podem te ajudar a resolver alguns desafios na sua caminhada.
+
+**_Mas existe algum material somente sobre as anotaçoẽs?_**
+
+Existe um canal no Youtube da [Michelli Brito](https://www.youtube.com/watch?v=Pd5tr483No0), que pode te auxiliar a entender todas essas anotações do Spring boot, ok, mais esse e em Português.
 
 Fica triste não, nosso amigo [Java Techie](https://www.youtube.com/watch?v=htyq-mER0AE&t=927s) que nunca decepciona seus seguidores traz 40+ anotações, e explica seu uso.
 
-A [@Transactional](https://www.baeldung.com/transaction-configuration-with-jpa-and-spring), considero vc  estudar ela separadamente pois ela tem algumas questões bem relevantes, na questões de commit, rollback.
+Eu recomendo que a anotação [@Transactional](https://www.baeldung.com/transaction-configuration-with-jpa-and-spring), seja estudada separadamente pois ela tem algumas questões bem relevantes e especifica, na questões de commit, rollback entre entros pontos que e referente a persistencia dos objetos.
 
 Agora depois de entender todos esse negocios loucos, vamos testar suas habilidade em quebrar um comportamento da Aplicação em camadas, Ah que legal, abaixo um modelo. eu disse modelo.
 
 Lembre-se não ditamos regras somente uma possibilida, vc e o arquiteto da sua aplicação vc conhece a mesma, vc define o que acha certo, mesmo que outras digam o contrario e na maioria das vezes entraremos em discuções como  o (Batman derrota o Supermen) ou (Criar curso de dev da mais dinheiro do que desenvolver algo) , se vc tiver preparado esse [github](https://github.com/pilhacheia/tretadev/issues?page=2&q=is%3Aissue+is%3Aopen), tem dezenas dessas questões pra "colocar fogo no parquinho".
 
-
-**Mas como eu separo os pacotes(package) de um projeto Spring Boot?**
+-------------------------------------------------------------------------------------------------------------------------
+### **Mas como eu separo os pacotes(package) de um projeto Spring Boot?**
 
 ![Layers](./documentation/layers.png)
 
@@ -400,6 +432,7 @@ Neste ponto tem algumas @Annotations, que devem ser entendidas:
 
 Se a sua Resposta for não, tá tranquilo , mas chegou o momente de aprender entender 
 
+-------------------------------------------------------------------------------------------------------------------------
 
 ### **Mas a processos complexo que exigem varios sistema integrados e trocando informações, como entender tudo isso?**
 
@@ -514,6 +547,18 @@ E como funciona a arquitetura CQRS, definida nos padrões **Data Management**
 <img src="./documentation/cqrs.png" width="450px">
 
 
+-----------------------------------------------------------------------------------------------------------
+### **Segurança com Spring Security, OAuth2, Saml e JWT**
+
+-----------------------------------------------------------------------------------------------------------
+### **Upload e download de arquivos**
+
+-----------------------------------------------------------------------------------------------------------
+### **Documentação com OpenAPI(Swagger)**
+
+
+-----------------------------------------------------------------------------------------------------------
+### **Deploy em produção na nuvem da Amazon**
 
 
 
