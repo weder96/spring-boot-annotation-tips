@@ -1,27 +1,27 @@
 # B: Questões Sobre Microserviços e Serviços Assincronos(Rabbit, Kafka, SQS)
 
-[A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)<br/>
-[C: Segurança com Spring Security, Upload Download e Deploy (Cloud)](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part03)<br/>
+[A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)
+[C: Segurança com Spring Security, Upload Download e Deploy (Cloud)](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part03)
 
 
-**21. Mas a processos complexo que exigem varios sistema integrados e trocando informações, como entender tudo isso?**<br/>
-**22. Reliability**<br/>
-**23. Gateway**<br/>
-**24. Microserviços e sues Dilemas Classicos**<br/>
-**25. Data Management**<br/>
-**26. Transactional Messaging**<br/>
-**27. Mas o que tem na maioria deste Design Patterns acima citado?**<br/> 
+**21. Mas a processos complexos que exigem vários sistemas integrados e trocando informações, como entender tudo isso?**
+**22. Reliability**
+**23. Gateway**
+**24. Microserviços e sues Dilemas Clássicos**
+**25. Data Management**
+**26. Transactional Messaging**
+**27. Mas o que tem na maioria deste Design Patterns acima citado?** 
 
 -------------------------------------------------------------------------------------------------
 
-### **21. Mas a processos complexo que exigem varios sistema integrados e trocando informações, como entender tudo isso?**
+### **21. Mas a processos complexos que exigem vários sistemas integrados e trocando informações, como entender tudo isso?**
 
 Como pode ser analisado na imagem abaixo temos dois, tipos de arquiteturas(monoliticas e Micro Serviços)
 
 ![Microservices-Architecture](../images/Microservices-Architecture-min.png)
 
 
-Sim aqui temos um paradigma de programação usando microservicos, que no final e nada mais nada menos, que varios projetos SpringBoot se comunicando.
+Sim, aqui temos um paradigma de programação usando microservicos, que no final e nada mais nada menos, que vários projetos SpringBoot se comunicando.
 
 ![Microservices-Architecture2](../images/springbootArchMS.png)
 
@@ -29,10 +29,10 @@ Sim e podemos ver como seria essa mesma arquiteura dentro de Service Registry, u
 
 ![Microservices-Architecture3](../images/SpringBootArchMS2.png)
 
-No meu github a um projeto [microServiceDemo](https://github.com/weder96/microServiceDemo) que detalha como vc criar uma arquitetura de micro serviço usando o Eureka Server como configurá-lo, é um projeto  simples mas te ajuda a entender partes de como configurar um projeto maven com modules, alem das configurações do [spring-cloud](https://spring.io/projects/spring-cloud)(Hoxton.SR12), porem na data deste arigo já esta na V2022.0.0, devido a versão que do [Spring boot](https://spring.io/projects/spring-boot)(2.3.3.RELEASE), porem na data deste artigo já esta na V3.0.1.
+No meu github a um projeto [microServiceDemo](https://github.com/weder96/microServiceDemo) que detalha como você criar uma arquitetura de micro serviço usando o Eureka Server como configurá-lo, é um projeto  simples, mas te ajuda a entender partes de como configurar um projeto maven com modules, alem das configurações do [spring-cloud](https://spring.io/projects/spring-cloud)(Hoxton.SR12), porem na data deste artigo já esta na V2022.0.0, devido a versão que do [Spring boot](https://spring.io/projects/spring-boot)(2.3.3.RELEASE), porem na data deste artigo já esta na V3.0.1.
 
 
-A outros ponto a ser analisados nesse projeto pois dentro do Projeto [Order](https://github.com/weder96/microServiceDemo/tree/main/order), trabalhamos com as configurações @FeignClient[openfeign](https://spring.io/projects/spring-cloud-openfeign), que te auxilia na comunicação entre microserviços.
+A outro ponto a ser analisados nesse projeto, pois no Projeto [Order](https://github.com/weder96/microServiceDemo/tree/main/order), trabalhamos com as configurações @FeignClient[openfeign](https://spring.io/projects/spring-cloud-openfeign), que te auxilia na comunicação entre microserviços.
 
 Outro ponto e que no projeto [Delivery](https://github.com/weder96/microServiceDemo/blob/main/delivery/src/main/java/com/wsousa/delivery/http/clients/AccoutingWebClient.java),usamos o WebCLient para fazer a comunicação.
 
@@ -45,6 +45,7 @@ Conceito de [circuit-breaker](https://microservices.io/patterns/reliability/circ
 ### **23. Gateway**
 
 E no projeto [Gateway](https://github.com/weder96/microServiceDemo/blob/main/gateway/pom.xml), para mapear as chamadas aos microserviços.
+
 
 
 ```
@@ -70,7 +71,7 @@ A mais o que tem nas citações acima, aqui sim todos os procedimentos dentro de
 
 _"Falar e fácil me mostre o código"_
 
-E lembre se vc der a direção em algo que vc acredita então considere a seu ponto de vista como feito, pois todos vão se basear nas suas ideias e ações e vão te ajudar a finalizar o caso de uso pretendido, pois só existe um objetivo entregar valor ao cliente, e aqui que cito mais um pilar.
+E lembre se você der a direção em algo que você acredita então considere a seu ponto de vista como feito, pois todos vão se basear nas suas ideias e ações e vão te ajudar a finalizar o caso de uso pretendido, pois só existe um objetivo entregar valor ao cliente, e aqui que cito mais um pilar.
 
 _"A prioridade máxima é funcionar de acordo com o caso de uso. Beleza e formosura não dão pão nem fartura."_
 
@@ -107,7 +108,7 @@ Voltamos ao Patterns de microserviços, aqui vou detalhar 2(dois) o **Data Manag
 
 Nos patterns acima citados temos alguns que usam processos assincronos, ou seja esperam um **produtor(publish)** e  **subscribe(consumidor)**, que no caso pode ser outra aplicação ou somente um **listener(ouvinte)**, que ao receber o comando dispara fechando o processo, além de também como tudo que fazemos pode haver falhas e devem ter seus retry ou filas de DQL(dead-letter queues), como serviços cloud como acima citado o SQS da AWS.
 
-Não tem como fugir vc terá que conhecer como esse processo funciona, eu primeiramente subi um **RabbitMQ** com o **Docker**(este vai ajudar muito seu crescimento), então posteriormente tive que lidar com **Kafka** e seu estilo de trabalhar com mensageria.
+Não tem como fugir você terá que conhecer como esse processo funciona, eu primeiramente subi um **RabbitMQ** com o **Docker**(este vai ajudar muito seu crescimento), então posteriormente tive que lidar com **Kafka** e seu estilo de trabalhar com mensageria.
 
 Eu vou ser sincero da trabalho mas fica muito bonito e bom depois de pronto.
 
@@ -125,4 +126,7 @@ Vou colocar duas imagens onde ele mostra como funciona um publish/subscribe(Prod
 E como funciona a arquitetura CQRS, definida nos padrões **Data Management**
 
 <img src="../images/cqrs.png" width="450px">
+
+
+
 
