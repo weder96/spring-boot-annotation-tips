@@ -17,7 +17,7 @@ public class CountryController {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@PostMapping(value = "/paises")
+	@PostMapping(value = "/country")
 	@Transactional
 	public String criaPais(@RequestBody @Valid CountryRequest request) {
 		Country novoCountry = new Country(request.getNome());

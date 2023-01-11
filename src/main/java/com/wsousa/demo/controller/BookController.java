@@ -20,17 +20,15 @@ public class BookController {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@PostMapping(value = "/livros")
+	@PostMapping(value = "/books")
 	@Transactional
-	//1
 	public String cria(@RequestBody @Valid BookRequest request) {
-		//1
-		Book novoLivro = request.toModel(
+		Book newBook = request.toModel(
 				id -> manager.find(Author.class, id),
 				id -> manager.find(Category.class, id)
 				);
-		manager.persist(novoLivro);
-		return novoLivro.toString();
+		manager.persist(newBook);
+		return newBook.toString();
 	}
 
 }

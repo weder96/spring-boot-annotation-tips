@@ -34,14 +34,14 @@ public class PurchaseController {
 		binder.addValidators(estadoPertenceAPaisValidator,cupomValidoValidator);
 	}
 
-	@PostMapping(value = "/compras")
+	@PostMapping(value = "/purchase")
 	@Transactional
 	public String cria(@RequestBody @Valid PurchaseRequest request) {
 		
-		Purchase novaPurchase = request.toModel(manager, couponRepository);
-		manager.persist(novaPurchase);
+		Purchase newPurchase = request.toModel(manager, couponRepository);
+		manager.persist(newPurchase);
 		
-		return novaPurchase.toString();
+		return newPurchase.toString();
 	}
 	
 }

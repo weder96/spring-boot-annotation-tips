@@ -28,7 +28,7 @@ public class StateRequest {
 	@Override
 	@Generated(Generated.ECLIPSE)
 	public String toString() {
-		return "NovoEstadoRequest [nome=" + nome + ", idPais=" + idPais + "]";
+		return "NewStateRequest [nome=" + nome + ", idPais=" + idPais + "]";
 	}
 
 	public State toModel(EntityManager manager) {

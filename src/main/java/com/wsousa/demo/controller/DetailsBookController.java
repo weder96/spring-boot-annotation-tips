@@ -19,17 +19,14 @@ public class DetailsBookController {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@GetMapping(value = "/produtos/{id}")
+	@GetMapping(value = "/details/{id}")
 	public DetalheSiteLivroResponse detalhe(@PathVariable("id") Long id) {
 
-		// 1
-		Book livroBuscado = Optional.ofNullable(manager.find(Book.class, id))
+		Book searchBook = Optional.ofNullable(manager.find(Book.class, id))
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
-		// 1
-		DetalheSiteLivroResponse detalheSiteLivroResponse = new DetalheSiteLivroResponse(
-				livroBuscado);
-		return detalheSiteLivroResponse;
+		DetalheSiteLivroResponse detailsBookResponse = new DetalheSiteLivroResponse(searchBook);
+		return detailsBookResponse;
 	}
 
 }

@@ -12,18 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//3
 public class AuthorsController {
 	
 	@PersistenceContext
 	private EntityManager manager;
 
-	@PostMapping(value = "/autores")
+	@PostMapping(value = "/authors")
 	@Transactional
-	//1
-	//2
 	public String cria(@RequestBody @Valid AuthorRequest request) {
-		//1
 		Author author = request.toModel();
 		manager.persist(author);
 		return author.toString();

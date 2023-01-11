@@ -17,13 +17,13 @@ public class StateController {
 	@Autowired
 	private EntityManager manager;
 
-	@PostMapping(value = "/estados")
+	@PostMapping(value = "/state")
 	@Transactional
 	public String cria(@RequestBody @Valid StateRequest request) {
-		State novoEstado = request.toModel(manager);
-		manager.persist(novoEstado);
+		State newState = request.toModel(manager);
+		manager.persist(newState);
 		
-		return novoEstado.toString();
+		return newState.toString();
 	}
 
 }
