@@ -1,5 +1,9 @@
 # B: Questões Sobre Microserviços e Serviços Assincronos(Rabbit, Kafka, SQS)
 
+[A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)<br/>
+[C: Segurança com Spring Security, Upload Download e Deploy (Cloud)](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part03)<br/>
+
+
 **21. Mas a processos complexo que exigem varios sistema integrados e trocando informações, como entender tudo isso?**<br/>
 **22. Reliability**<br/>
 **23. Gateway**<br/>

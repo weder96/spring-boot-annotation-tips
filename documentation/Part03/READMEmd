@@ -1,5 +1,9 @@
 # C: Segurança com Spring Security, Upload, Download e Deploy (Cloud)
 
+[A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)<br/>
+[B: Questões Sobre Microserviços e Serviços Assincronos(Rabbit, Kafka, SQS)](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part02)<br/>
+
+
 **28. Segurança com Spring Security, OAuth2, Saml e JWT** <br/>
 **29. Upload e download de arquivos**<br/>
 **30. Documentação com OpenAPI(Swagger)**<br/>
