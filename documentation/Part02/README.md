@@ -1,16 +1,17 @@
 # B: Questões Sobre Microserviços e Serviços Assincronos(Rabbit, Kafka, SQS)
 
-[A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)
+[A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)<br/>
 [C: Segurança com Spring Security, Upload Download e Deploy (Cloud)](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part03)
 
 
-**21. Mas a processos complexos que exigem vários sistemas integrados e trocando informações, como entender tudo isso?**
-**22. Reliability**
-**23. Gateway**
-**24. Microserviços e sues Dilemas Clássicos**
-**25. Data Management**
-**26. Transactional Messaging**
-**27. Mas o que tem na maioria deste Design Patterns acima citado?** 
+**21. Mas a processos complexos que exigem vários sistemas integrados e trocando informações, como entender tudo isso?**<br/>
+**22. Reliability**<br/>
+**23. Gateway**<br/>
+**24. Microserviços e sues Dilemas Clássicos**<br/>
+**25. Data Management**<br/>
+**26. Transactional Messaging**<br/>
+**27. Mas o que tem na maioria deste Design Patterns acima citado?**<br/> 
+**28. Observability with Spring Boot**<br/>
 
 -------------------------------------------------------------------------------------------------
 
@@ -127,6 +128,60 @@ E como funciona a arquitetura CQRS, definida nos padrões **Data Management**
 
 <img src="../images/cqrs.png" width="450px">
 
+
+-------------------------------------------------------------------------------------------------
+### **28. Observability with Spring Boot**
+
+Devido a grande possilidade com o uso de microserviço, a Galerinha do SRE(Site Reliability Engineering), e que atualmente tem papel fundamental no rastreamento e controle, pois a as aplicações podem ser afetadas aqualquer momento com grande quantidade de acesso, um ponto dos microserviços pararem e afetar tudo. 
+
+O spring tem uma equipe de observabilidade que tem trabalhado na adição de suporte de observabilidade para aplicativos Spring há algum tempo e a cada versão está evoluindo.
+
+[**Mas o que é observabilidade?**](https://spring.io/blog/2022/10/12/observability-with-spring-boot-3) 
+
+Em nosso entendimento, é "quão bem você pode entender as partes internas do seu sistema examinando suas saídas". Acreditamos que a interconexão entre métricas, registro e rastreamento distribuído oferece a capacidade de raciocinar sobre o estado do seu sistema para depurar exceções e latência em seus aplicativos. Você pode assistir mais sobre o que pensamos ser a observabilidade neste episódio de Enlightning com Jonatan Ivanov.
+
+Agora é hora de adicionar recursos relacionados à observabilidade!
+
+NO meu github tem um projeto [SpringBootActuatorPrometheus](https://github.com/weder96/SpringBootActuatorPrometheus) que criei para estudos somente com está questão:
+
+**Métricas**
+
+Para métricas **Micrometer com Prometheus**, 
+**Rastreamento**
+
+Para Rastreamento de Propagação de Contexto com Rastreamento **Micrometer**, precisamos escolher uma ponte **tracer** (tracer é uma biblioteca usada para lidar com o ciclo de vida de um span).
+
+
+**Histórico**
+
+Como temos Rastreamento Micrometer no caminho de classe, os logs são automaticamente correlacionados (ou seja, eles contêm um identificador de rastreamento exclusivo). Agora precisamos enviar os logs. Para esta demonstração, nós os enviamos para Grafana Loki. Podemos conseguir isso adicionando a dependência com.github.loki4j:loki-logback-appender.
+
+Aconselho vc a ler 3 Livros sobre o assunto:
+
+-------------------------------------------------------------------------------------
+
+**01. Site Reliability Engineering: How Google Runs Production Systems (English Edition)**
+
+![Site Reliability](../images/51XswOmuLqL.jpg)
+
+[Site Reliability Engineering: How Google Runs Production Systems (English Edition)](https://www.amazon.com.br/Site-Reliability-Engineering-Production-Systems-ebook/dp/B01DCPXKZ6/ref=sr_1_2?adgrpid=81898274395&gclid=CjwKCAiA2fmdBhBpEiwA4CcHzSqc8YqyZem-1M7b0Lvw16Whn2XGeNZQ0iXct6PGSeozl9BRv_wKKxoCGYQQAvD_BwE&hvadid=425982498844&hvdev=c&hvlocphy=1031430&hvnetw=g&hvqmt=b&hvrand=11454883084154792729&hvtargid=kwd-299036721296&hydadcr=5620_11235101&keywords=google+sre&qid=1673464129&sr=8-2)
+
+-------------------------------------------------------------------------------------
+
+**02. The Site Reliability Workbook: Practical Ways to Implement SRE**
+
+![Site Reliability](../images/B07FWFPMYG.01._SCLZZZZZZZ_SX500_.jpg)
+
+[The Site Reliability Workbook: Practical Ways to Implement SRE](https://www.amazon.com.br/Site-Reliability-Workbook-Betsy-Beyer/dp/1492029505/ref=sr_1_3?adgrpid=81898274395&gclid=CjwKCAiA2fmdBhBpEiwA4CcHzSqc8YqyZem-1M7b0Lvw16Whn2XGeNZQ0iXct6PGSeozl9BRv_wKKxoCGYQQAvD_BwE&hvadid=425982498844&hvdev=c&hvlocphy=1031430&hvnetw=g&hvqmt=b&hvrand=11454883084154792729&hvtargid=kwd-299036721296&hydadcr=5620_11235101&keywords=google+sre&qid=1673464230&sr=8-3&ufe=app_do%3Aamzn1.fos.db68964d-7c0e-4bb2-a95c-e5cb9e32eb12)
+
+
+-------------------------------------------------------------------------------------
+
+**03. Establishing SRE Foundations A Step-by-Step Guide to Introducing Site Reliability Engineering in Software Delivery Organizations**
+
+![Establishing SRE Foundations](../images/0137424604.01._SCLZZZZZZZ_SX500_.jpg)
+
+[https://www.amazon.com/Establishing-Foundations-Step-Step-Organizations/dp/0137424604](https://www.amazon.com/Establishing-Foundations-Step-Step-Organizations/dp/0137424604)
 
 
 

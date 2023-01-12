@@ -1,17 +1,68 @@
-# C: Segurança com Spring Security, Upload, Download e Deploy (Cloud)
+# C: Tratamento de Exceções, Segurança com Spring Security, Exceptions e Validações, Upload, Download e Deploy (Cloud)
 
 [A: Como começar a aprender o Spring boot](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part01)<br/>
 [B: Questões Sobre Microserviços e Serviços Assincronos(Rabbit, Kafka, SQS)](https://github.com/weder96/spring-boot-annotation-tips/tree/main/documentation/Part02)<br/>
 
 
-**28. Segurança com Spring Security, OAuth2, Saml e JWT** <br/>
-**29. Upload e download de arquivos**<br/>
-**30. Documentação com OpenAPI(Swagger)**<br/>
-**31. Deploy em produção na nuvem da Amazon**<br/>
-**32. Conclusão**<br/>
+**29. Tratamento de Exceções com SpringBoot** <br/>
+**30. Validações com Bean Validation SpringBoot**
+**31. Testes de Integrações**
+**32. Segurança com Spring Security, OAuth2, Saml e JWT** <br/>
+**33. Upload e download de arquivos**<br/>
+**34. Documentação com OpenAPI(Swagger)**<br/>
+**35. Deploy em produção na nuvem da Amazon**<br/>
+**36. Conclusão**<br/>
+
 
 -----------------------------------------------------------------------------------------------------------
-### **28. Segurança com Spring Security, OAuth2, Saml e JWT**
+### **29. Tratamento de Exceções com SpringBoot**
+
+Aqui vamos a uma parte essencial, que e o tratamento de exceções, quando estamos trabalhando com API, deixamos parametros, que nem sempre vai funcionar como esperado o que vai gerar erros na nossa API,  
+
+Neste caso a algumas formas de resolver isso, uma e o lançando exceções customizadas anotadas com @ResponseStatus, outro ponto que gosto e também e essencial e vc ter suas exceptions personalizadas, pois elas te ajudam nos rastreamento de erros da aplicação, no meu caso sempre tenho BusinessException e SystemException.
+
+Mas como sabemos o Springboot tem um controlador de exceções chamado @ExceptionHandler, onde ao usar ele junto @ControllerAdvice, podemos tratar exceptions em nível global, e vc pode também customizar essas exceptions.
+
+Em um nível mais baixo ainda  temos a possibilidade de Habilitar erros na desserialização de propriedades inexistentes ou ignoradas, fazendo o tratando PropertyBindingException na desserialização.
+
+-----------------------------------------------------------------------------------------------------------
+
+### **30. Validações com Bean Validation SpringBoot**
+
+As vezes precisamos criar validações para verificarmos se algum campo que foi passado para aplicação atende a regra de negocio ou se o mesmo existe, neste caso temos um auxilio que são validações com **Bean Validation**, podemos adicionar constraints e validar no proprio controller com **@Valid**, e ainda realizar o tratando exception de violação de constraints desta  validação.
+
+Aqui a algumas questões legais como validação em as associações de uma entidade em cascata, vc pode  convertendo grupos de constraints para validação em cascata com **@ConvertGroup**, além de poder customizar mensagens de validação.
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+### **31. Testes de Integrações**
+
+Falar em teste como diz o ditado e "chover no molhado", precisamos sempre estar afiado em realizar testes, aqui o QA ou também conhecido testers, o cara que sempre será seu melhor amigo(não contém ironia, ele vai te levar a ser melhor, a cada sprint).
+Ao rodarmos um teste de integração com Spring Boot, sempre pensamos no **JUnit e AssertJ**, mas temos uma possibilidade enormes quando estamos trabalhando com testes, abaixo uma listagem com alguns que podem te ajudar e possivelmente seu proximo emprego pode ter um deles ou mais , já implantado ou esperando vc para fazer isso.
+
+1. JUnit
+2. REST Assured
+3. Mockito
+4. Selenium
+5. TestNG
+6. Spock Framework
+7. Cucumber
+8. Spring Test
+9. DBUnit
+10. Testcontainers
+11. AssertJ
+12. Awaitility
+13. Wiser
+14. Memoryfilesystem
+15. WireMock
+
+Poderia aqui falar sobre muitos daria até varios Post , sobre o assunto, mas isso e outro momento.
+
+
+-----------------------------------------------------------------------------------------------------------
+### **32. Segurança com Spring Security, OAuth2, Saml e JWT**
 
 A segurança em aplicações e uma parte sempre complexa e também devido a grande diversidades de soluções, na antiguidade de programação, a uns 12 anos atras nos Seguiamos o JAAS (Java Authentication and Au­thorization Service) um nome bonito, porém a complexidade de se trabalhar com essa solução e falta de uma documentação.
 
@@ -25,8 +76,15 @@ Neste ponto alguns detalhes já fazem parte do seu entendimento, mas as formas d
 
 No meu [github](https://github.com/weder96/spring-boot-keycloak) , há um projeto [spring-boot-keycloak](https://github.com/weder96/spring-boot-keycloak), onde trabalhamos com uma autenticação e autorização usando o Spring Boot e Keycloak, lembrando que aqui usamos o [docker-compose](https://docs.docker.com/compose/install/) para subir o mysql e keyCloak.
 
+
+Vc deverá entender com trabalhar com OAuth2 e com JWT e controle de acesso, 
+
+E como funcionam  os algoritmmos de  criptrografia que geram tokens JWT, como algoritmo simétrico (HMAC SHA-256), ou assinando o JWT com um algoritmo assimétrico (RSA SHA-256),  e como o spring Security te ajuda a verificar autenticação de  usuário com dados do banco de dados.
+
+Vc pode Adicionar Claims públicas no Payload do JWT (nome do usuário) e entender com pode planejar uma topologia dos grupos e permissões do sistema, que ao ser usado com o Method Security pode Restringindo acesso a API com uso @PreAuthorize e SpEL
+
 -----------------------------------------------------------------------------------------------------------
-### **29. Upload e download de arquivos**
+### **33. Upload e download de arquivos**
 
 Quando estamos criando um sistema na maioria das vezes vamos nos deparar com manipulação de imagens ou arquivos, desde somente transferir, em outros casos ate gerar ou converter de formato tipo docx para PDF, ou de pdf para imagens, e as formas de salvar essas imagens, atualmente passam por armazenamento na nuvem(AWS, AZURE, Google Cloud), existem outros, mas vamos ficar somente, neste vou me basear na AWS e seu serviço S3(Simple Servive Storage), e você estará em momento de que está trabalhando em um sistema que já tem uma arquitetura pronta, e agora se depara com um requisito de upload e download e salvar o mesmo na AWS. 
 
@@ -43,7 +101,7 @@ Porem manipulação de arquivos e um pouco mais abrangente aqui estamos falando 
 
 
 -----------------------------------------------------------------------------------------------------------
-### **30. Documentação com OpenAPI(Swagger)**
+### **34. Documentação com OpenAPI(Swagger)**
 
 O famoso Swagger, como estamos trabalhando com APIS, e sempre bom documentar, pois, quem cria e quem usa e quem faz a integrações, neste modelo de ágil são sempre profissionais diferentes, no caso o frontEnd e BackEnd.
 
@@ -53,7 +111,7 @@ Esta imagem acima e somente um modelo que nos mostra quais parâmetros e quais u
 
 
 -----------------------------------------------------------------------------------------------------------
-### **31. Deploy em produção na nuvem da Amazon**
+### **35. Deploy em produção na nuvem da Amazon**
 
 Aqui vem sempre a questão, como desenvolvedor por que tenho que saber fazer deploy na nuvem? 
 
@@ -62,7 +120,7 @@ Pois as equipes possuem uma pessoa especializada em configurar o deploy, sim. Ta
 Algumas equipes costumam a ter um profissional de Cloud, mas na sua maioria são profissionais cloud e não tem domínio sobre o Springboot e Java e Servidores(Tomcat, Jetty, JBoss, WildFly, WebSphere, Glassfish), que por sua vez também e muita coisa para aprender, então quando conhecemos podemos ser uteis e ajudar a destravar alguns impedimentos que pode ocorrer.
 
 -----------------------------------------------------------------------------------------------------------
-### **32. Conclusão**
+### **36. Conclusão**
 
 **Ser um profissional Spring e Springboot**, usando java e uma tarefa que exige disciplina e também muita prática, trabalhar em grandes empresas e ter salários bons e uma busca de todos nos profissionais, não caiam nas conversas de 6 meses, você será um JEDI, em 6 meses você se tornará um bom excelente profissional.
 

@@ -112,7 +112,7 @@ mvn dependency:tree
 
 Result:
 
-![dependency](./documentation/images/dependency.png)
+![dependency](..//images/dependency.png)
 
 
 Este comando nos mostra todas as dependências de uma lib:
